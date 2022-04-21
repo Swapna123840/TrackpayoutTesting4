@@ -11,12 +11,14 @@ pipeline{
         bat 'yarn install'
       }
     }
-      
+    }
       stage("run backend"){
         steps{
               echo 'Executing gradle.......'
+          withGradle(){
             bat './gradlew -v'
         }
       }
   }
+}
 }
